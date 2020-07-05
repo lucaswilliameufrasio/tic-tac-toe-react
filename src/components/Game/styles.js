@@ -1,9 +1,7 @@
 const styles = {
     winner: {
-        widht: '280px',
+        width: '200px',
         margin: '20px auto',
-        display: 'flex',
-        alignItems: 'center',
     }
 }
 
