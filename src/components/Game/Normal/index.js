@@ -31,7 +31,7 @@ function Normal() {
 
   function resetMoves() {
     setBoard(Array(9).fill(null));
-    setXisNext(winner === 'X');
+    winner !== null && setXisNext(winner === 'X');
   }
 
   function navigateToHome() {
