@@ -25,7 +25,7 @@ function Normal() {
 
   function resetMoves(){
     setBoard(Array(9).fill(null));
-    setXisNext(true);
+    setXisNext(winner === 'X');
   }
 
   function renderMoves() {
