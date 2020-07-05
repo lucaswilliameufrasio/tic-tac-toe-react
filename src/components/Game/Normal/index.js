@@ -34,12 +34,6 @@ function Normal() {
     setXisNext(winner === 'X');
   }
 
-  function renderMoves() {
-    return (
-      <button onClick={resetMoves}>Start Game</button>
-    );
-  }
-
   function navigateToHome() {
     history.push("/");
   }
@@ -57,7 +51,8 @@ function Normal() {
           <p>
             {winner ? `Winner ${winner}` : `Next player ${xIsNext ? "X" : "O"}`}
           </p>
-          {renderMoves()}
+
+          <button onClick={resetMoves} className="startNewGameButton">Start New Game</button>
         </div>
       </div>
     </>
