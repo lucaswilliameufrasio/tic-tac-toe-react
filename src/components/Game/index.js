@@ -22,7 +22,10 @@ function Game() {
     // Put an X or an O in the clicked square
     squares[index] = xIsNext ? "X" : "O";
 
-    setBoard(boardCopy);
+    // Add the most recent state
+    setHistory([...timeInHistory, squares]);
+    setStepNumber(timeInHistory.length);
+
     setXisNext(!xIsNext);
   }
 
