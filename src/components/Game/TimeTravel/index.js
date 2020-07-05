@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Home } from "react-feather";
+
 import Board from "../../Board";
+
 import { calculateWinner } from "../../../helpers/calculateWinner";
 
 import "./styles.css";
@@ -8,6 +12,8 @@ function TimeTravel() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
+
+  const routeHistory = useHistory();
 
   const winner = calculateWinner(history[stepNumber]);
 
@@ -37,7 +43,7 @@ function TimeTravel() {
   function renderMoves() {
     return history.map((_step, move) => {
       const destination = move ? `Go to move #${move}` : "Go to start";
-      
+
       return (
         <li key={move}>
           <button onClick={() => jumpTo(move)}>{destination}</button>
@@ -46,8 +52,16 @@ function TimeTravel() {
     });
   }
 
+  function navigateToHome() {
+    routeHistory.push("/");
+  }
+
   return (
     <>
+      <div className="homeButtonContainer">
+        <button className="homeButton" onClick={navigateToHome}><Home /> Voltar para o Menu</button>
+      </div>
+
       <div className="boardContainer">
         <Board squares={history[stepNumber]} onClick={handleClick} />
 
