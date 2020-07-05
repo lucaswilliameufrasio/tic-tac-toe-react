@@ -32,6 +32,9 @@
   margin: 20px auto;
 }
 
+.winner p {
+  margin-right: 10px;
+}
 
 .moveSelector {
   -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
