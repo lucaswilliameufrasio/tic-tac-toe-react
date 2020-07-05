@@ -12,13 +12,15 @@ function Game() {
   const winner = calculateWinner(history[stepNumber]);
 
   function handleClick(index) {
-    const boardCopy = [...board];
+    const timeInHistory = history.slice(0, stepNumber + 1);
+    const current = timeInHistory[stepNumber];
+    const squares = [...current];
 
     //If user click on occupied square or if game is won, return
-    if (winner || boardCopy[index]) return;
+    if (winner || squares[index]) return;
 
     // Put an X or an O in the clicked square
-    boardCopy[index] = xIsNext ? "X" : "O";
+    squares[index] = xIsNext ? "X" : "O";
 
     setBoard(boardCopy);
     setXisNext(!xIsNext);
