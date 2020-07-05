@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Home } from 'react-feather';
 
-import Board from "../../Board";
+import Board from "../../../components/Board";
 
 import { calculateWinner } from "../../../helpers/calculateWinner";
 

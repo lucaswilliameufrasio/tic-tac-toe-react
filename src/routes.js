@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import Menu from './pages/Menu';
-import Normal from './components/Game/Normal';
-import TimeTravel from './components/Game/TimeTravel';
+import Normal from './pages/Game/Normal';
+import TimeTravel from './pages/Game/TimeTravel';
 
 
 function Routes() {
