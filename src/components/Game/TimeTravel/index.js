@@ -45,9 +45,7 @@ function TimeTravel() {
       const destination = move ? `Go to move #${move}` : "Go to start";
 
       return (
-        <li key={move}>
-          <button onClick={() => jumpTo(move)}>{destination}</button>
-        </li>
+        <option key={move} onClick={() => jumpTo(move)} value={move}>{destination}</option>
       );
     });
   }
@@ -67,11 +65,12 @@ function TimeTravel() {
 
         <div className="winner">
           <p>
-            {winner ? `Winner ${winner}` : `Next player ${xIsNext ? "X" : "O"}`}
+            {winner ? `Winner ${winner}` : `Next player: ${xIsNext ? "X" : "O"}`}
           </p>
 
-          {renderMoves()}
-
+          <select className="moveSelector" value={stepNumber} onChange={event => jumpTo(event.target.value)} name="moves">
+            {renderMoves()}
+          </select>
         </div>
       </div>
     </>
