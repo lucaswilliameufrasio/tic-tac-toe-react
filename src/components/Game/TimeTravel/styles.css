@@ -12,6 +12,16 @@
 .homeButton {
   display: flex;
   align-items: center;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 4px;
+  padding: 0 10px 0 10px;
+  height: 48px;
+  font-size: 16px;
+  background: blue;
+  font-weight: bold;
+  color: #FFF;
+  cursor: pointer;
 }
 
 .winner {
