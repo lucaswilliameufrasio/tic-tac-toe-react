@@ -1,3 +1,8 @@
+.boardContainer {
+  height: 90%;
+  margin-top: 10px;
+}
+
 .winner {
   width: 200px;
   margin: 20px auto;
