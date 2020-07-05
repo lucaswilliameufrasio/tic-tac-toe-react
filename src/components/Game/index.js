@@ -9,7 +9,7 @@ function Game() {
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
 
-  const winner = calculateWinner(board);
+  const winner = calculateWinner(history[stepNumber]);
 
   function handleClick(index) {
     const boardCopy = [...board];
