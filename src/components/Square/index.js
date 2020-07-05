@@ -1,8 +1,9 @@
 import React from "react";
-import styles from "./styles";
+
+import "./styles.css";
 
 function Square({ onClick, value }) {
-  return <button style={styles.button} onClick={onClick}>{value}</button>;
+  return <button className="button" onClick={onClick}>{value}</button>;
 }
 
 export default Square;
