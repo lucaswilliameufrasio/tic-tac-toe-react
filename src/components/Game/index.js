@@ -29,7 +29,10 @@ function Game() {
     setXisNext(!xIsNext);
   }
 
-  function jumpTo() {}
+  function jumpTo(step) {
+    setStepNumber(step);
+    setXisNext(step % 2 === 0);
+  }
 
   function renderMoves() {
     return history.map((_step, move) => {
