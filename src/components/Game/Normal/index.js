@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Home } from 'react-feather';
+
 import Board from "../../Board";
+
 import { calculateWinner } from "../../../helpers/calculateWinner";
 
 import "./styles.css";
@@ -7,6 +11,8 @@ import "./styles.css";
 function Normal() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [xIsNext, setXisNext] = useState(true);
+
+  const history = useHistory();
 
   const winner = calculateWinner(board);
 
@@ -23,7 +29,7 @@ function Normal() {
     setXisNext(!xIsNext);
   }
 
-  function resetMoves(){
+  function resetMoves() {
     setBoard(Array(9).fill(null));
     setXisNext(winner === 'X');
   }
@@ -34,8 +40,16 @@ function Normal() {
     );
   }
 
+  function navigateToHome() {
+    history.push("/");
+  }
+
   return (
     <>
+      <div className="homeButtonContainer">
+        <button className="homeButton" onClick={navigateToHome}><Home /> Voltar para o Menu</button>
+      </div>
+
       <div className="boardContainer">
         <Board squares={board} onClick={handleClick} />
 
