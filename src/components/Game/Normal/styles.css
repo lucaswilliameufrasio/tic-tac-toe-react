@@ -2,6 +2,18 @@
     height: 90%;
     margin-top: 10px;
 }
+
+.homeButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px 0 0;
+}
+
+.homeButton {
+    display: flex;
+    align-items: center;
+}
+
 .winner {
     width: 200px;
     margin: 20px auto;
