@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Board from "../Board";
-import { calculateWinner } from "../../helpers/calculateWinner";
+import Board from "../../Board";
+import { calculateWinner } from "../../../helpers/calculateWinner";
 
-import styles from "./styles";
+import "./styles.css";
 
-function Game() {
+function TimeTravel() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
@@ -49,7 +49,7 @@ function Game() {
   return (
     <>
       <Board squares={history[stepNumber]} onClick={handleClick} />
-      <div style={styles.winner}>
+      <div className="winner">
         <p>
           {winner ? `Winner ${winner}` : `Next player ${xIsNext ? "X" : "O"}`}
         </p>
@@ -59,4 +59,4 @@ function Game() {
   );
 }
 
-export default Game;
+export default TimeTravel;
