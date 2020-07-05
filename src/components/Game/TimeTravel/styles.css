@@ -18,3 +18,19 @@
   width: 200px;
   margin: 20px auto;
 }
+
+
+.moveSelector {
+  -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+  -moz-appearance: none; /* Remove estilo padrão do Firefox */
+  appearance: none; /* Também remove o estilo do Firefox*/
+  border: 20px;
+  border-radius: 6px;
+  padding: 0 10px 0 10px;
+  height: 40px;
+  font-size: 16px;
+  background: black;
+  font-weight: bold;
+  color: #FFF;
+  cursor: pointer;
+}
