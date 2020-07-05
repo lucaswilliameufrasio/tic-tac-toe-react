@@ -5,7 +5,8 @@ import { calculateWinner } from "../../helpers/calculateWinner";
 import styles from "./styles";
 
 function Game() {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
 
   const winner = calculateWinner(board);
