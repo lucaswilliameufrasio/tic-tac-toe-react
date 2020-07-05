@@ -48,12 +48,17 @@ function TimeTravel() {
 
   return (
     <>
-      <Board squares={history[stepNumber]} onClick={handleClick} />
-      <div className="winner">
-        <p>
-          {winner ? `Winner ${winner}` : `Next player ${xIsNext ? "X" : "O"}`}
-        </p>
-        {renderMoves()}
+      <div className="boardContainer">
+        <Board squares={history[stepNumber]} onClick={handleClick} />
+
+        <div className="winner">
+          <p>
+            {winner ? `Winner ${winner}` : `Next player ${xIsNext ? "X" : "O"}`}
+          </p>
+
+          {renderMoves()}
+
+        </div>
       </div>
     </>
   );
