@@ -48,7 +48,7 @@ function Game() {
 
   return (
     <>
-      <Board squares={board} onClick={handleClick} />
+      <Board squares={history[stepNumber]} onClick={handleClick} />
       <div style={styles.winner}>
         <p>
           {winner ? `Winner ${winner}` : `Next player ${xIsNext ? "X" : "O"}`}
