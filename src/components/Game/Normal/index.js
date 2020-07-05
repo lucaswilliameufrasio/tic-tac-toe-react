@@ -36,12 +36,15 @@ function Normal() {
 
   return (
     <>
-      <Board squares={board} onClick={handleClick} />
-      <div className="winner">
-        <p>
-          {winner ? `Winner ${winner}` : `Next player ${xIsNext ? "X" : "O"}`}
-        </p>
-        {renderMoves()}
+      <div className="boardContainer">
+        <Board squares={board} onClick={handleClick} />
+
+        <div className="winner">
+          <p>
+            {winner ? `Winner ${winner}` : `Next player ${xIsNext ? "X" : "O"}`}
+          </p>
+          {renderMoves()}
+        </div>
       </div>
     </>
   );
