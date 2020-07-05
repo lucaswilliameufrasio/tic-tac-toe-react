@@ -32,9 +32,15 @@ function Game() {
   function jumpTo() {}
 
   function renderMoves() {
-    return (
-      <button onClick={() => setBoard(Array(9).fill(null))}>Start Game</button>
-    );
+    return history.map((_step, move) => {
+      const destination = move ? `Go to move #${move}` : "Go to start";
+      
+      return (
+        <li key={move}>
+          <button onClick={() => jumpTo(move)}>{destination}</button>
+        </li>
+      );
+    });
   }
 
   return (
